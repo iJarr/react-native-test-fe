@@ -1,10 +1,13 @@
 import React from "react";
 import { Image, Pressable, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const SinpeButton = ({ onPress }) => {
+const SinpeButton = () => {
+  const navigation = useNavigation();
+
   return (
     <Pressable
-      onPress={onPress}
+      onPress={() => navigation.navigate("ContactSelection")}
       style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}
     >
       <Image
